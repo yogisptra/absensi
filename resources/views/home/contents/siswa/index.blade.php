@@ -54,10 +54,10 @@
             <tbody>
                 @foreach ($siswas as $siswa)                    
                     <tr>
-                        <td class="table-plus text-center">{{ $loop->iteration }}</td>
-                        <td>{{ $siswa->nis }}</td>
-                        <td>{{ $siswa->firstName }} {{ $siswa->lastName }}</td>
-                        <td>{{ $siswa->kelas->nama }}</td>
+                        <td class="table-plus text-left">{{ $loop->iteration }}</td>
+                        <td class="table-plus text-center">{{ $siswa->nis }}</td>
+                        <td class="table-plus text-center">{{ $siswa->firstName }} {{ $siswa->lastName }}</td>
+                        <td class="table-plus text-center">{{ $siswa->kelas->nama }}</td>
                         <td class="text-center">
                             <div class="dropleft">
                                 <button type="button" class="btn btn-outline-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

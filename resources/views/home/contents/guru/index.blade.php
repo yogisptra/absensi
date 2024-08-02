@@ -13,17 +13,17 @@
 @endif
 <div class="card-box mb-30">
     <div class="pd-20 d-flex justify-content-between">
-        <h4 class="text-blue h4">Table Siswa</h4>
+        <h4 class="text-blue h4">Table</h4>
         <div>
-            <a data-toggle="modal" data-target="#import" type="button" class="btn btn-success">Import Data Siswa</a>
-            <a class="btn btn-danger" href="{{ route('export') }}">Export Data Siswa</a>
-            <a class="btn btn-primary" href="/siswa/create">Tambah Data Siswa</a>
+            <a data-toggle="modal" data-target="#import" type="button" class="btn btn-success">Import Data</a>
+            <a class="btn btn-danger" href="{{ route('export') }}">Export Data</a>
+            <a class="btn btn-primary" href="/guru/create">Tambah Data</a>
         </div>
         <div class="modal fade" id="import" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="myLargeModalLabel">Import Data Siswa</h4>
+                        <h4 class="modal-title" id="myLargeModalLabel">Import Data</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
                     <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
@@ -45,19 +45,19 @@
             <thead>
                 <tr>
                     <th class="table-plus datatable-nosort">No.</th>
-                    <th class="text-center">NIS</th>
-                    <th class="text-center">Nama Siswa</th>
-                    <th class="text-center">Kelas Siswa</th>
+                    <th class="text-center">NIK</th>
+                    <th class="text-center">Nama</th>
+                    <th class="text-center">Email</th>
                     <th class="text-center">Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($siswas as $siswa)                    
+                @foreach ($gurus as $row)                    
                     <tr>
                         <td class="table-plus text-center">{{ $loop->iteration }}</td>
-                        <td>{{ $siswa->nis }}</td>
-                        <td>{{ $siswa->firstName }} {{ $siswa->lastName }}</td>
-                        <td>{{ $siswa->kelas->nama }}</td>
+                        <td class="text-center">{{ $row->nik }}</td>
+                        <td class="text-center">{{ $row->firstName }} {{ $row->lastName }}</td>
+                        <td class="text-center">{{ $row->email }}</td>
                         <td class="text-center">
                             <div class="dropleft">
                                 <button type="button" class="btn btn-outline-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -65,12 +65,12 @@
                                 </button>
                                 <div class="dropdown-menu">
                                     <!-- Dropdown menu links -->
-                                    <a class="dropdown-item" href="/siswa/{{ $siswa->id }}">Detail</a>
-                                    <a class="dropdown-item" href="/siswa/{{ $siswa->id }}/edit">Edit</a>
-                                    <form action="/siswa/{{ $siswa->id }}" method="post">
+                                    <a class="dropdown-item" href="/guru/{{ $row->id }}">Detail</a>
+                                    <a class="dropdown-item" href="/guru/{{ $row->id }}/edit">Edit</a>
+                                    <form action="/guru/{{ $row->id }}" method="post">
                                         @method('delete')
                                         @csrf
-                                        <button class="dropdown-item" onclick="return confirm('Apakah anda yakin akan menghapus data siswa ini?')">Hapus</button>
+                                        <button class="dropdown-item" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')">Hapus</button>
                                     </form>
                                 </div>
                             </div>

@@ -27,12 +27,12 @@
         <table class="table stripe hover data-table-export nowrap">
             <thead>
                 <tr>
-                    <th class="table-plus datatable-nosort">No.</th>
+                    <th class="table-plus datatable-nosort text-left">No.</th>
                     <th class="text-center">Data</th>
                     <th class="text-center">Isi Data</th>
                 </tr>
             </thead>
-            <tbody>                    
+            <tbody class="table-plus text-center">                    
                 <tr>
                     <td>1</td>
                     <td>NIS             :</td>

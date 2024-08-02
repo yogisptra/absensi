@@ -32,8 +32,8 @@
                 @foreach ($absensis as $absensi)                    
                     <tr>
                         <td class="table-plus text-center">{{ $loop->iteration }}</td>
-                        <td>{{ $absensi->kode }}</td>
-                        <td>{{ $absensi->keterangan }}</td>
+                        <td class="text-center">{{ $absensi->kode }}</td>
+                        <td class="text-center">{{ $absensi->keterangan }}</td>
                         <td class="text-center">
                             <div class="dropleft">
                                 <button type="button" class="btn btn-outline-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

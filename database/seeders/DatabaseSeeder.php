@@ -24,12 +24,12 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'nik' => '3510211507010005',
-            'email' => 'ambon.15072001@gmail.com',
+            'email' => 'admin@admin.com',
             'phone' => '085955290636',
-            'firstName' => 'Hafid Dian',
-            'lastName' => 'Nurfaujan Ahat',
+            'firstName' => 'Admin',
+            'lastName' => 'Admin',
             'jns_kelamin' => 'Laki-laki',
-            'alamat' => 'RT03/RW06 Dsn. Gogourung Dawuhan Kademangan Blitar Jawa Timur 66161 Indonesia',
+            'alamat' => 'Jalan Cibangkong No 17 Kota Bandung',
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', //password
             'email_verified_at' => now(),
             'remember_token' => '1234567898765432',

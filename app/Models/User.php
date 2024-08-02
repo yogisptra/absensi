@@ -18,7 +18,8 @@ class User extends Authenticatable
      *
      * @var string[]
      */
-    protected $guarded = ['id'];
+    protected $guarded = [];
+
 
     public function mapels(){
         return $this->hasMany(Mapel::class);

@@ -15,7 +15,7 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'nik' => $this->faker->unique()->nik(),
+            'nik' => str_pad(rand(1000000000000000, 9999999999999999), 16, '0', STR_PAD_LEFT),
             'email' => $this->faker->unique()->email(),
             'phone' => $this->faker->unique()->phoneNumber(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

@@ -6,14 +6,6 @@ The requirements to Laravel-SchoolAttendance application is:
 - **Webserver**: Nginx or Apache
 - **Database**: MySQL, or Maria DB
 
-### Git Clone
-
-```
-$ git clone https://github.com/ambonxnobody/Laravel-SchoolAttendance.git
-$ cd Laravel-SchoolAttendance-main
-$ composer update
-```
-
 ## Setup
 
 **Important**: If you have not the .env file in root folder, you must copy or rename the .env.example to .env

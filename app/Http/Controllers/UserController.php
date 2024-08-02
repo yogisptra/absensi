@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -48,11 +49,11 @@ class UserController extends Controller
             'password' => 'required|max:255',
             'firstName' => 'required|max:255',
             'lastName' => 'required|max:255',
-            'tmpLahir' => 'max:255',
-            'tglLahir' => '',
-            'jnsKelamin' => '',
+            'jns_kelamin' => '',
             'alamat' => '',
         ]);
+
+        $validatedData['password'] = Hash::make($validatedData['password']);
 
         User::create($validatedData, [
             'remember_token' => Str::random(16),
@@ -67,11 +68,12 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
+        $user = User::where('id', $id)->first();
         return view('home.contents.guru.show', [
-            'title' => 'Detail Data Guru',
-            'guru' => $user
+            'title' => 'Edit Data Guru',
+            'gurus' => $user,
         ]);
     }
 
@@ -81,11 +83,12 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
+        $user = User::where('id', $id)->first();
         return view('home.contents.guru.edit', [
             'title' => 'Edit Data Guru',
-            'guru' => $user,
+            'gurus' => $user,
         ]);
     }
 
@@ -96,22 +99,37 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'nik' => 'required|digits:16',
-            'phone' => 'max:255',
-            'email' => 'max:255',
+            'nik' => [
+                'required',
+                'digits:16',
+                // Abaikan validasi unique untuk ID pengguna yang sedang diperbarui
+                'unique:users,nik,' . $id,
+            ],
+            'phone' => [
+                'nullable',
+                'max:255',
+                'unique:users,phone,' . $id,
+            ],
+            'email' => [
+                'nullable',
+                'email',
+                'max:255',
+                // Abaikan validasi unique untuk ID pengguna yang sedang diperbarui
+                'unique:users,email,' . $id,
+            ],
             'password' => 'required|max:255',
             'firstName' => 'required|max:255',
             'lastName' => 'required|max:255',
-            'tmpLahir' => 'max:255',
-            'tglLahir' => '',
-            'jnsKelamin' => '',
+            'jns_kelamin' => '',
             'alamat' => '',
         ]);
 
-        User::where('id', $user->id)->update($validatedData);
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        User::where('id', $id)->update($validatedData);
 
         return redirect('/guru')->with('success', 'Data Guru telah diupdate!');
     }

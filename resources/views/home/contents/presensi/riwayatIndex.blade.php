@@ -22,11 +22,11 @@
                 @foreach ($presensis as $presensi)
                     <tr>
                         <td class="table-plus text-center">{{ $loop->iteration }}</td>
-                        <td>{{ $presensi->kelas->nama }}</td>
-                        <td>{{ $presensi->created_at->toDayDateTimeString() }}</td>
-                        <td>{{ $presensi->mapel->kode }} - {{ $presensi->mapel->nama }}</td>
+                        <td class="text-center">{{ $presensi->kelas->nama }}</td>
+                        <td class="text-center">{{ $presensi->created_at->toDayDateTimeString() }}</td>
+                        <td class="text-center">{{ $presensi->mapel->kode }} - {{ $presensi->mapel->nama }}</td>
                         <td class="text-center">
-                            <a href="/presensi/{{ $presensi->created_at }}" class="btn btn-sm btn-outline-primary">Pilih</a>
+                            <a href="mapel/{$presensi->id}/presensi/{$presensi->created_at}" class="btn btn-sm btn-outline-primary">Pilih</a>
                         </td>
                     </tr>
                 @endforeach

@@ -21,8 +21,8 @@
                 @foreach ($mapels as $mapel)
                     <tr>
                         <td class="table-plus text-center">{{ $loop->iteration }}</td>
-                        <td>{{ $mapel->nama }}</td>
-                        <td>{{ $mapel->kelas->nama }}</td>
+                        <td class="text-center">{{ $mapel->nama }}</td>
+                        <td class="text-center">{{ $mapel->kelas->nama }}</td>
                         <td class="text-center">
                             <a href="/presensi/{{ $mapel->id }}/create" class="btn btn-sm btn-outline-primary">Pilih</a>
                         </td>

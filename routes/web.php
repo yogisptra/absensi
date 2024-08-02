@@ -63,7 +63,7 @@ Route::resource('/guru', UserController::class)->middleware('auth');
 Route::get('/presensi', [PresensiController::class, 'indexinti'])->middleware('auth');
 Route::post('/presensi', [PresensiController::class, 'store'])->middleware('auth');
 Route::get('/presensi/{mapel}/create', [PresensiController::class, 'create'])->middleware('auth');
-// Route::get('/mapel/{id}/presensi/{created_at}', [PresensiController::class, 'show'])->middleware('auth');
+Route::get('/mapel/{id}/presensi/{created_at}', [PresensiController::class, 'show'])->middleware('auth');
 
 // Riwayat Presensi Routes
 Route::resource('/riwayatPresensi', PresensiController::class)->only('index', 'show')->middleware('auth');

@@ -20,8 +20,8 @@
                 @foreach ($presensis as $presensi)
                     <tr>
                         <td class="table-plus text-center">{{ $loop->iteration }}</td>
-                        <td>{{ $presensi->siswa->firstName }} {{ $presensi->siswa->lastName }}</td>
-                        <td>{{ $presensi->absensi->kode }} - {{ $presensi->absensi->keterangan }}</td>
+                        <td class="text-center">{{ $presensi->siswa->firstName }} {{ $presensi->siswa->lastName }}</td>
+                        <td class="text-center">{{ $presensi->absensi->kode }} - {{ $presensi->absensi->keterangan }}</td>
                     </tr>
                 @endforeach
             </tbody>

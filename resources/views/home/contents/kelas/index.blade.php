@@ -32,8 +32,8 @@
                 @foreach ($kelas as $kelas)
                     <tr>
                         <td class="table-plus text-center">{{ $loop->iteration }}</td>
-                        <td>{{ $kelas->kode }}</td>
-                        <td>{{ $kelas->nama }}</td>
+                        <td class="text-center">{{ $kelas->kode }}</td>
+                        <td class="text-center">{{ $kelas->nama }}</td>
                         <td class="text-center">
                             <div class="dropleft">
                                 <button type="button" class="btn btn-outline-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

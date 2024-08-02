@@ -34,10 +34,10 @@
                 @foreach ($mapels as $mapel)                    
                     <tr>
                         <td class="table-plus text-center">{{ $loop->iteration }}</td>
-                        <td>{{ $mapel->kode }}</td>
-                        <td>{{ $mapel->nama }}</td>
-                        <td>{{ $mapel->kelas->nama }}</td>
-                        <td>Bpk/Ibu {{ $mapel->user->firstName }} {{ $mapel->user->lastName }}</td>
+                        <td class="text-center">{{ $mapel->kode }}</td>
+                        <td class="text-center">{{ $mapel->nama }}</td>
+                        <td class="text-center">{{ $mapel->kelas->nama }}</td>
+                        <td class="text-center">Bpk/Ibu {{ $mapel->user->firstName }} {{ $mapel->user->lastName }}</td>
                         <td class="text-center">
                             <div class="dropleft">
                                 <button type="button" class="btn btn-outline-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

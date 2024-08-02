@@ -1,8 +1,8 @@
 <div class="left-side-bar">
     <div class="brand-logo">
         <a href="/">
-            <h2 class="text-white light-logo">MIGogourung</h2>
-            <h2 class="text-black dark-logo">MIGogourung</h2>
+            <h2 class="text-white light-logo">Absensi</h2>
+            <h2 class="text-black dark-logo">Absensi</h2>
             {{-- <img src="vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
             <img src="vendors/images/deskapp-logo-white.svg" alt="" class="light-logo"> --}}
         </a>

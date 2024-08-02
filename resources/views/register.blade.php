@@ -33,7 +33,7 @@
 		<div class="container-fluid d-flex justify-content-between align-items-center">
 			<div class="brand-logo">
 				<a href="/">
-					<h1>MIGogourung</h1>
+					<h1>Absensi</h1>
 				</a>
 			</div>
 			<div class="login-menu">
